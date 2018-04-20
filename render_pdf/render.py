@@ -25,7 +25,7 @@ options = {
     'zoom': 3.0,
     'orientation': 'Portrait',
     'cache-dir': '/tmp/pdf',
-    'window.status': 'ready_to_print',
+    'window-status': 'ready_to_print',
     'javascript-delay': 1000,
     'disable-javascript': None,
     # 'custom-header' : [
