@@ -11,6 +11,8 @@ except ImportError:
 
 render_pdf_option = getattr(settings, "RENDER_PDF", {})
 
+render_secure = getattr(settings, "RENDER_DEFAULT_SECURE", True)
+
 options = {
     'page-size': render_pdf_option.get('page-size', 'A4'),
     # 'margin-top': '0.75in',
@@ -26,8 +28,8 @@ options = {
     'orientation': 'Portrait',
     'cache-dir': '/tmp/pdf',
     # 'window-status': 'ready_to_print',
-    'javascript-delay': 1000,
-    # 'disable-javascript': None,
+    # 'javascript-delay': 1000,
+    'disable-javascript': None,
     # 'custom-header' : [
     #     ('Accept-Encoding', 'gzip')
     # ],
@@ -48,7 +50,16 @@ class RenderPDF(object):
         output.write(content)
         self.s.save(name=_filename, content=output)
         output.close()
-        return _filename
+
+        if render_secure:
+            _url = getattr(settings, 'RENDER_PDF_SECURE_HOST', )
+        else:
+            _url = getattr(settings, 'RENDER_PDF_HOST', )
+
+        return "{url}/{filename}".format(
+            url=_url,
+            filename=_filename,
+        )
 
     def html2pdf_from_string(self, string_list, filename):
 
@@ -63,6 +74,3 @@ class RenderPDF(object):
 
 if __name__ == "__main__":
     render = RenderPDF()
-
-
-

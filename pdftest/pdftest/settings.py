@@ -99,3 +99,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+
+RENDER_PDF_HOST = 'http://pdf.jiaxin.im'
+RENDER_PDF_SECURE_HOST = 'https://pdf.jiaxin.im'
+RENDER_DEFAULT_SECURE = True
+
