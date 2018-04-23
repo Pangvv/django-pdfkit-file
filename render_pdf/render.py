@@ -52,14 +52,17 @@ class RenderPDF(object):
         output.close()
 
         if render_secure:
-            _url = getattr(settings, 'RENDER_PDF_SECURE_HOST', )
+            _url = getattr(settings, 'RENDER_PDF_SECURE_HOST', None)
         else:
-            _url = getattr(settings, 'RENDER_PDF_HOST', )
+            _url = getattr(settings, 'RENDER_PDF_HOST', None)
 
-        return "{url}/{filename}".format(
-            url=_url,
-            filename=_filename,
-        )
+        if _url:
+            return "{url}/{filename}".format(
+                url=_url,
+                filename=_filename,
+            )
+        else:
+            return _filename
 
     def html2pdf_from_string(self, string_list, filename):
 
