@@ -25,7 +25,7 @@ options = {
     'zoom': 3.0,
     'orientation': 'Portrait',
     'cache-dir': '/tmp/pdf',
-    'window-status': 'ready_to_print',
+    # 'window-status': 'ready_to_print',
     'javascript-delay': 1000,
     # 'disable-javascript': None,
     # 'custom-header' : [
@@ -33,30 +33,6 @@ options = {
     # ],
     # 'no-outline': None
 }
-
-
-# def html2pdf(urls, **kwargs):
-#     _urls = urls
-#     out = pdfkit.from_url(_urls, False,
-#                           options=options)
-#
-#     return out
-
-
-# def html2pdf_string(filename, strings, opt=options):
-#     storage = get_storage_class()
-#     s = storage()
-#     _filename = filename
-#     _strings = strings
-#     _options = opt
-#     out_pdf = pdfkit.from_string(_strings,
-#                                  False,
-#                                  options=_options)
-#     output = StringIO()
-#     output.write(out_pdf)
-#     s.save(name=_filename, content=output)
-#     output.close()
-#     return _filename
 
 
 class RenderPDF(object):
