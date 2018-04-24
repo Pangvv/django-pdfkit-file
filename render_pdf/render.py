@@ -23,7 +23,7 @@ options = {
     'encoding': "UTF-8",
     'print-media-type': render_pdf_option.get('print-media-type', None),
     'disable-smart-shrinking': None,
-    'zoom': render_pdf_option.get('zoom', 3.0),
+    'zoom': render_pdf_option.get('zoom', 1.0),
     'orientation': 'Portrait',
     'cache-dir': '/tmp/pdf',
     # 'window-status': 'ready_to_print',
