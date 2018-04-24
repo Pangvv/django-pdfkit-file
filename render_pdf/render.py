@@ -10,7 +10,6 @@ except ImportError:
     from cStringIO import StringIO
 
 render_pdf_option = getattr(settings, "RENDER_PDF", {})
-
 render_secure = getattr(settings, "RENDER_DEFAULT_SECURE", True)
 
 options = {
@@ -20,11 +19,11 @@ options = {
     # 'margin-bottom': '0.75in',
     # 'margin-left': '0.75in',
     # 'dpi': 220,
-    'background': None,
+    'background': render_pdf_option.get('backgrounde', None),
     'encoding': "UTF-8",
-    'print-media-type': None,
+    'print-media-type': render_pdf_option.get('print-media-type', None),
     'disable-smart-shrinking': None,
-    'zoom': 3.0,
+    'zoom': render_pdf_option.get('zoom', 3.0),
     'orientation': 'Portrait',
     'cache-dir': '/tmp/pdf',
     # 'window-status': 'ready_to_print',
@@ -74,6 +73,13 @@ class RenderPDF(object):
         return self._save_to_file(content=out_pdf,
                                   filename=filename)
 
+    def html2pdf_from_url(self, urls, filename):
+        pdfkit.from_url(urls, filename)
+        return filename
+
 
 if __name__ == "__main__":
     render = RenderPDF()
+
+    render.html2pdf_from_url(['http://test.coolsite360.com/documents/doc-021724019383/5acb0fb8c4a59a33cae3fbb4.md'],
+                             'outpubt.pdf')
