@@ -74,12 +74,13 @@ class RenderPDF(object):
                                   filename=filename)
 
     def html2pdf_from_url(self, urls, filename):
-        pdfkit.from_url(urls, filename)
-        return filename
+        out_pdf = pdfkit.from_url(urls, False, options=self.options)
+        return self._save_to_file(content=out_pdf,
+                                  filename=filename)
 
 
 if __name__ == "__main__":
     render = RenderPDF()
 
     render.html2pdf_from_url(['http://test.coolsite360.com/documents/doc-021724019383/5acb0fb8c4a59a33cae3fbb4.md'],
-                             'outpubt.pdf')
+                             'output.pdf')
