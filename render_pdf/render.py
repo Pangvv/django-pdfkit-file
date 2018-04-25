@@ -26,8 +26,9 @@ options = {
     'zoom': render_pdf_option.get('zoom', 1.0),
     'orientation': 'Portrait',
     'cache-dir': render_pdf_option.get('cache-dir', '/tmp/pdf'),
-    'window-status': render_pdf_option.get('window-status', 'ready_to_print'),
+    # 'window-status': render_pdf_option.get('window-status', 'ready_to_print'),
     'javascript-delay': render_pdf_option.get('javascript-delay', 5000),
+    # 'debug-javascript': None,
     'quiet': None
     # 'disable-javascript': None,
     # 'custom-header' : [
