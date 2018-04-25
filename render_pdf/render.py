@@ -28,6 +28,7 @@ options = {
     'cache-dir': render_pdf_option.get('cache-dir', '/tmp/pdf'),
     # 'window-status': 'ready_to_print',
     'javascript-delay': 1000,
+    'quiet': None
     # 'disable-javascript': None,
     # 'custom-header' : [
     #     ('Accept-Encoding', 'gzip')
