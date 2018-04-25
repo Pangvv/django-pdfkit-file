@@ -25,10 +25,10 @@ options = {
     'disable-smart-shrinking': None,
     'zoom': render_pdf_option.get('zoom', 1.0),
     'orientation': 'Portrait',
-    'cache-dir': '/tmp/pdf',
+    'cache-dir': render_pdf_option.get('cache-dir', '/tmp/pdf'),
     # 'window-status': 'ready_to_print',
-    # 'javascript-delay': 1000,
-    'disable-javascript': None,
+    'javascript-delay': 1000,
+    # 'disable-javascript': None,
     # 'custom-header' : [
     #     ('Accept-Encoding', 'gzip')
     # ],
