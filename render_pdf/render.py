@@ -27,7 +27,7 @@ options = {
     'orientation': 'Portrait',
     'cache-dir': render_pdf_option.get('cache-dir', '/tmp/pdf'),
     # 'window-status': 'ready_to_print',
-    'javascript-delay': 1000,
+    'javascript-delay': render_pdf_option.get('javascript-delay', 4000),
     'quiet': None
     # 'disable-javascript': None,
     # 'custom-header' : [
