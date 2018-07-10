@@ -29,7 +29,7 @@ setup(
     packages=['render_pdf'],
     author='jiaxin',
     author_email='edison7500@gmail.com',
-    url='https://github.com/edison7500/django-pdfkit',
+    url='https://github.com/edison7500/django-pdfkit-file.git',
     license='MIT',
     description=DESCRIPTION,
     long_description=LONG_DESCRIPTION,
