@@ -7,7 +7,7 @@ from django.conf import settings
 try:
     from StringIO import StringIO
 except ImportError:
-    from io import StringIO
+    from io import BytesIO as  StringIO
 
 render_pdf_option = getattr(settings, "RENDER_PDF", {})
 render_secure = getattr(settings, "RENDER_DEFAULT_SECURE", True)
